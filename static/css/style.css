@@ -1,11 +1,33 @@
-html, body {
+/* html, body {
     width: 100vw;
     height: 100vh;
     background-color: rgb(228, 228, 228);
+} */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.box {
-    position: absolute;
+#layoutSidenav_content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 420px auto;
+    /* height: 100%; */
+  }
+
+.dashboard .box {
+    /* position: absolute; */
     z-index: 1;
     border: 1px solid rgb(222, 220, 220);
     background-color: white;
@@ -16,12 +38,12 @@ html, body {
 }
 
 /*---------------------------------------------------------------*/
-.three {
+.dashboard .three {
     height: 40px;
     width: 100%;
 }
 
-.three b {
+.dashboard .three b {
     display: block;
     font-size: 20px;
     font-weight: bold 500;
@@ -33,9 +55,9 @@ html, body {
     text-align: center; /* 왼쪽 정렬 추가 */
 }
   
-.three b:after {
+.dashboard .three b:after {
     content: "";
-    position: absolute;
+    /* position: absolute; */
     left: 5%;
     bottom: 4px;
     height: 3px;
@@ -43,23 +65,23 @@ html, body {
     background-color: rgb(222, 220, 220);
 }
 
-ul {
+.dashboard ul {
     list-style: none;
     padding-left: 0;
     padding-top: 3px;
     margin-top: 3px;
 }
 
-li {
+.dashboard li {
     float: left;
     margin-right: 10px; /* 각 항목 사이의 간격 조정 */
     position: relative; /* 불릿 위치 조정을 위한 상대 위치 설정 */
     padding-left: 12px; /* 텍스트와 불릿 사이의 간격 조정 */
 }
 
-li:before {
+.dashboard li:before {
     content: '\2022'; /* 불릿 문자 */
-    position: absolute;
+    /* position: absolute; */
     left: 0; /* 불릿의 위치 조정 */
     top: 0; /* 불릿의 상단 위치 조정 */
     color: black; /* 불릿 색상 설정 */
@@ -67,17 +89,17 @@ li:before {
     line-height: 1; /* 라인 높이 조정 */
 }
 
-.radio-container {
+.dashboard .radio-container {
     width: 480px;
     display: flex;
     justify-content: space-between;
 }
 
-.radio-container input[type="radio"] {
+.dashboard .radio-container input[type="radio"] {
     display: none; /* 기본 라디오 버튼 숨기기 */
 }
 
-.radio-container label {
+.dashboard .radio-container label {
     cursor: pointer;
     margin: 5px;
     padding: 5px;
@@ -90,17 +112,17 @@ li:before {
     height: 5px;
 }
 
-.radio-container input[type="radio"]:checked + label {
+.dashboard .radio-container input[type="radio"]:checked + label {
     background-color: #555; /* 선택된 라디오 버튼 색상 변경 */
 }
 
-.radio-container label span {
+.dashboard .radio-container label span {
     display: block;
     margin-top: 40px; /* 텍스트를 버튼 아래에 위치 */
     text-align: center;
 }
 /*---------------------------------------------------------------*/
-#title {
+/* #title {
     width: 300px;
     height: 400px;
 }
@@ -135,14 +157,38 @@ li:before {
     top: 425px;
     width: 700px;
     height: 600px;
+} */
+#title {
+    grid-column: 1 / 2;
+}
+
+#hierarchy_structure {
+    grid-column: 2 / 4;
+}
+
+#topic_rank {
+    grid-column: 4 / 5;
+}
+
+#similarity_score {
+    grid-column: 1 / 2;
+}
+
+#human {
+    grid-column: 2 / 3;
+}
+
+#result {
+    grid-column: 3 / 5;
+    overflow-y: auto;
 }
 
 /*--------------------------------------*/
 #news_title {
-    position: absolute;
+    /* position: absolute; */
     margin: 0 15px;
     padding: 5px 5px 10px 5px;
-    height: 40px;
+    height: 80px;
     border-bottom: 2px dashed #ddd;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1em;
@@ -152,12 +198,12 @@ li:before {
 }
 
 #main_text {
-    position: absolute;
+    /* position: absolute; */
     margin: 0 15px;
     padding: 5px 5px 10px 5px;
-    top: 105px;
-    width: 265px;
-    height: 180px;
+    /* top: 105px; */
+    /* width: 265px; */
+    height: 190px;
     padding-bottom: 10px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1em;
@@ -166,12 +212,12 @@ li:before {
 }
 
 #Summary {
-    position: absolute;
+    /* position: absolute; */
     margin: 0 15px;
     padding: 5px 5px 10px 5px;
-    top: 305px;
-    width: 265px;
-    height: 80px;
+    /* top: 305px; */
+    /* width: 265px; */
+    height: 85px;
     padding-top: 10px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1em;
@@ -181,7 +227,7 @@ li:before {
 
 /*----------------------------------------------------*/
 #thumbnail {
-    position: absolute;
+    /* position: absolute; */
     top: 45px;
     left: 10px;
     width: 490px;
@@ -190,7 +236,7 @@ li:before {
 }
 
 #topic_list {
-    position: absolute;
+    /* position: absolute; */
     top: 410px;
     left: 10px;
     width: 490px;
@@ -199,7 +245,7 @@ li:before {
 }
 
 #bait_title {
-    position: absolute;
+    /* position: absolute; */
     top: 465px;
     left: 10px;
     width: 490px;
@@ -209,7 +255,7 @@ li:before {
 }
 
 #set_score {
-    position: absolute;
+    /* position: absolute; */
     top: 540px;
     left: 10px;
     width: 490px;
@@ -224,7 +270,7 @@ li:before {
 }
 /*----------------------------------------------------*/
 #trajectory {
-    position: absolute;
+    /* position: absolute; */
     top: 45px;
     left: 15px;
     width: 680px;
