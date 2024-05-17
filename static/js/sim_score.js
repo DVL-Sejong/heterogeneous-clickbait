@@ -3,7 +3,7 @@ let tchart;
 let schart;
 let lchart;
 
-function draw_score(title) {
+function draw_score(a, b, c) {
     if (rendered == 1) {
         tchart.destroy();
         schart.destroy();
@@ -12,14 +12,10 @@ function draw_score(title) {
     }
 
     var toptions = {
-      series: [70],
+      series: [a],
       chart: {
         height: 190,
         type: 'radialBar',
-      },
-      title: {
-        text: 'Thumbnail / Title',
-        align: 'left'
       },
       plotOptions: {
         radialBar: {
@@ -32,10 +28,11 @@ function draw_score(title) {
               show: false, // 'series-1'와 같은 라벨을 숨깁니다.
             },
             value: {
+              offsetY: 7,
               formatter: function (val) {
                 return val + '%'; // 값 뒤에 '%'를 붙입니다.
               },
-              color: '#333', // 여기서 글자 색상을 조정할 수 있습니다.
+              color: '#000', // 여기서 글자 색상을 조정할 수 있습니다.
               fontSize: '16px', // 글자 크기 조정
               show: true,
             }
@@ -43,22 +40,19 @@ function draw_score(title) {
         },
       },
       labels: [], // 중앙에 표시할 텍스트를 비웁니다.
-  };
+      colors: ['#f17827'],
+    };
   
-  tchart = new ApexCharts(document.querySelector("#thumbnail_title"), toptions);
+  tchart = new ApexCharts(document.querySelector("#thumbnail_t"), toptions);
   rendered = 1;
   tchart.render();
 
     var soptions = {
-        series: [83],
+        series: [b],
         chart: {
         height: 190,
         type: 'radialBar',
       },
-      title: {
-        text: 'Summary / Title',
-        align: 'left'
-      },
       plotOptions: {
         radialBar: {
           hollow: {
@@ -70,10 +64,11 @@ function draw_score(title) {
               show: false, // 'series-1'와 같은 라벨을 숨깁니다.
             },
             value: {
+              offsetY: 7,
               formatter: function (val) {
                 return val + '%'; // 값 뒤에 '%'를 붙입니다.
               },
-              color: '#333', // 여기서 글자 색상을 조정할 수 있습니다.
+              color: '#000', // 여기서 글자 색상을 조정할 수 있습니다.
               fontSize: '16px', // 글자 크기 조정
               show: true,
             }
@@ -81,21 +76,18 @@ function draw_score(title) {
         },
       },
       labels: [],
+      colors: ['#b0bfd0'],
       };
 
-    schart = new ApexCharts(document.querySelector("#summary_title"), soptions);
+    schart = new ApexCharts(document.querySelector("#summary_t"), soptions);
     schart.render();
 
 
     var loptions = {
-        series: [47],
+        series: [c],
         chart: {
-            height: 190,
+            height: 180,
             type: 'radialBar',
-      },
-      title: {
-        text: 'Summary / Thumbnail',
-        align: 'left'
       },
       plotOptions: {
         radialBar: {
@@ -108,10 +100,11 @@ function draw_score(title) {
               show: false, // 'series-1'와 같은 라벨을 숨깁니다.
             },
             value: {
+              offsetY: 7,
               formatter: function (val) {
                 return val + '%'; // 값 뒤에 '%'를 붙입니다.
               },
-              color: '#333', // 여기서 글자 색상을 조정할 수 있습니다.
+              color: '#000', // 여기서 글자 색상을 조정할 수 있습니다.
               fontSize: '16px', // 글자 크기 조정
               show: true,
             }
@@ -119,10 +112,9 @@ function draw_score(title) {
         },
       },
       labels: [],
+      colors: ['#aea0dd'],
       };
 
-    lchart = new ApexCharts(document.querySelector("#summary_thumbnail"), loptions);
+    lchart = new ApexCharts(document.querySelector("#summary_th"), loptions);
     lchart.render();
 }
-
-draw_score(1);

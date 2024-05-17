@@ -1,128 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <!-- 필요항목 -->
-        <!-- CSS 파일 -->
-        <link rel="stylesheet" href="static/css/sb-admin.css"/>
-        <link rel="stylesheet" href="static/css/style.css">
-        <!-- 아이콘 js 파일 -->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- 필요항목-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    </head>
-    <body class="sb-nav-fixed">
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <!-- 메인페이지 (기술명 영문으로 입력) -->
-            <a class="navbar-brand ps-3" href="#">FUSION PLATFORM</a>
-            <!-- 메인페이지 (기술명 영문으로 입력) -->
-            
-            <!-- 메뉴 (메뉴명 영문으로 입력) -->
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-            	<li class="nav-item">
-		            <a class="nav-link" href="#!">WORKSPACE</a>
-		        </li>
-		        <li class="nav-item">
-		            <a class="nav-link" href="#!">COOPERATION LIST</a>
-		        </li>
-            </ul>
-            <!-- 메뉴 (메뉴명 영문으로 입력) -->
-            
-            <!-- 검색기능 및 영역구분 -->
-            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <!-- <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button> -->
-                </div>
-            </form>
-            <!-- 검색기능 및 영역구분 -->
-                <head>
-	
-            <!-- 설정, 활동로그, 로그아웃 -->
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                <li class="nav-item dropdown">
-                    <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 아래 ID 값 -->
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i>기관명</a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Settings</a></li>
-                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <!-- 설정, 활동로그, 로그아웃 -->
-        </nav>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/sb-admin.css"/>
+</head>
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- 메인페이지 (기술명 영문으로 입력) -->
+        <a class="navbar-brand ps-3" href="#">FUSION PLATFORM</a>
+        <!-- 메인페이지 (기술명 영문으로 입력) -->
+        
+        <!-- 메뉴 (메뉴명 영문으로 입력) -->
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item">
+                <a class="nav-link" href="#!">WORKSPACE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#!">COOPERATION LIST</a>
+            </li>
+        </ul>
+        <!-- 메뉴 (메뉴명 영문으로 입력) -->
+        
+        <!-- 검색기능 및 영역구분 -->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <!-- <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button> -->
+            </div>
+        </form>
+        <!-- 검색기능 및 영역구분 -->
+            <head>
 
-        <div id="layoutSidenav_content">
-            <div class="dashboard">
-                <div class="box" id="title">
-                    <div class="three"><b>Article</b></div>
-                    <div class="line" id="news_title"></div>
-                    <div id="main_text"></div>
-                    <div id="Summary"></div>
+        <!-- 설정, 활동로그, 로그아웃 -->
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 아래 ID 값 -->
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i>세종대학교</a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">Settings</a></li>
+                    <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- 설정, 활동로그, 로그아웃 -->
+    </nav>
+
+    <div id="layoutSidenav_content">
+        <div class="dashboard">
+            <div class="box" id="title">
+                <div class="three"><b>Article</b></div>
+                <div class="four" id="news_title">
+                    <b>Title</b>
+                    <div id="titleText"></div>
                 </div>
-                <div class="box" id="hierarchy_structure">
-                    <div class="three"><b>Hierarchical News Structure</b></div>
-                    <div id="tree_vis"></div>
+                <div class="four" id="main_text">
+                    <b>Main Text</b>
+                    <div id="mainText"></div>
                 </div>
-                <div class="box" id="topic_rank">
-                    <div class="three"><b>Topic Rank</b></div>
-                    <div id="rank_chart"></div>
+                <div class="four" id="Summary">
+                    <b>Summary</b>
+                    <div id="summaryText"></div>
                 </div>
-                <div class="box" id="similarity_score">
-                    <div class="three"><b>Similarity Score</b></div>
-                    <div id="thumbnail_title"></div>
-                    <div id="summary_title"></div>
-                    <div id="summary_thumbnail"></div>
+            </div>
+            <div class="box" id="hierarchy_structure">
+                <div class="three"><b>Hierarchical News Structure</b></div>
+                <div id="tree_vis"></div>
+            </div>
+            <div class="box" id="topic_rank">
+                <div class="three"><b>Topic Rank</b></div>
+                <div id="rank_chart"></div>
+            </div>
+            <div class="box" id="similarity_score">
+                <div class="three"><b>Similarity Score</b></div>
+                <div class="four" id="thumbnail_title">
+                    <b>Thumbnail / Title</b>
+                    <div id="thumbnail_t"></div>
                 </div>
-                <div class="box" id="human">
-                    <div class="three"><b>Human Click Bait</b></div>
-                    <div id="thumbnail"></div>
-                    <div id="topic_list"><b>Topic</b><br></div>
-                    <div id="bait_title"><b>Title</b><br></div>
-                    <div id="set_score"><b>Score Selection</b><br>
-                        <div class="radio-container">
-                            <input type="radio" id="radio0" name="range" value="0"><label for="radio0"><span>0</span></label>
-                            <input type="radio" id="radio1" name="range" value="0.1"><label for="radio1"><span>0.1</span></label>
-                            <input type="radio" id="radio2" name="range" value="0.2"><label for="radio2"><span>0.2</span></label>
-                            <input type="radio" id="radio3" name="range" value="0.3"><label for="radio3"><span>0.3</span></label>
-                            <input type="radio" id="radio4" name="range" value="0.4"><label for="radio4"><span>0.4</span></label>
-                            <input type="radio" id="radio5" name="range" value="0.5"><label for="radio5"><span>0.5</span></label>
-                            <input type="radio" id="radio6" name="range" value="0.6"><label for="radio6"><span>0.6</span></label>
-                            <input type="radio" id="radio7" name="range" value="0.7"><label for="radio7"><span>0.7</span></label>
-                            <input type="radio" id="radio8" name="range" value="0.8"><label for="radio8"><span>0.8</span></label>
-                            <input type="radio" id="radio9" name="range" value="0.9"><label for="radio9"><span>0.9</span></label>
-                            <input type="radio" id="radio10" name="range" value="1"><label for="radio10"><span>1</span></label>
+                <div class="four" id="summary_title">
+                    <b>Summary / Title</b>
+                    <div id="summary_t"></div>
+                </div>
+                <div class="four" id="summary_thumbnail">
+                    <b>Summary / Thumbnail</b>
+                    <div id="summary_th"></div>
+                </div>
+            </div>
+            <div class="box" id="human">
+                <div class="three"><b>Human Clickbait</b></div>
+                <div class="four" id="thumbnail">
+                    <b>Thumbnail</b>
+                    <div id="img_box"></div>
+                </div>
+                <div class="four" id="topic_list">
+                    <b>Topic</b>
+                    <div class="text_box" id="topic_box"></div>
+                </div>
+                <div class="four" id="bait_title">
+                    <b>Title</b>
+                    <div class="text_box" id="title_box"></div>
+                </div>
+                <div class="four" id="set_score"><b>Score Selection</b>
+                    <div class="radio-container">
+                        <input type="radio" id="radio0" name="range" value="0"><label for="radio0"><span>0</span></label>
+                        <input type="radio" id="radio1" name="range" value="0.1"><label for="radio1"><span>0.1</span></label>
+                        <input type="radio" id="radio2" name="range" value="0.2"><label for="radio2"><span>0.2</span></label>
+                        <input type="radio" id="radio3" name="range" value="0.3"><label for="radio3"><span>0.3</span></label>
+                        <input type="radio" id="radio4" name="range" value="0.4"><label for="radio4"><span>0.4</span></label>
+                        <input type="radio" id="radio5" name="range" value="0.5"><label for="radio5"><span>0.5</span></label>
+                        <input type="radio" id="radio6" name="range" value="0.6"><label for="radio6"><span>0.6</span></label>
+                        <input type="radio" id="radio7" name="range" value="0.7"><label for="radio7"><span>0.7</span></label>
+                        <input type="radio" id="radio8" name="range" value="0.8"><label for="radio8"><span>0.8</span></label>
+                        <input type="radio" id="radio9" name="range" value="0.9"><label for="radio9"><span>0.9</span></label>
+                        <input type="radio" id="radio10" name="range" value="1"><label for="radio10"><span>1</span></label>
+                    </div>
+                </div>
+            </div>
+            <div class="box" id="result">
+                <div class="three">
+                    <b>Trajectory of Click Bait</b>
+                </div>
+                <div id="trajectory"></div>
+                <div class="five" id="total">
+                    <b>Aggregated Clickbait Scoring</b>
+                    <div id="scoring">
+                        <div id="seperate_score"></div>
+                        <div id="total_score">
+                            <b>Total Clickbait Score</b>
+                            <div id="total_div"></div>
                         </div>
                     </div>
                 </div>
-                <div class="box" id="result">
-                    <div class="three"><b>Trajectory of Click Bait</b></div>
-                    <div id="trajectory"></div>
-                </div>
+            </div>
+
+            <div id="swap_data" onclick="swap_data()">Swap</div>
+        </div>
+    </div>
+
+    <footer class="py-4 bg-light mt-auto">
+        <div class="container-fluid px-4">
+            <div class="d-flex align-items-center justify-content-between small">
+                <div class="text-muted">Copyright &copy; PCN & WISEITECH & Sejong University 2023</div>
+                <!-- <div>
+                    <a href="#">Privacy Policy</a>
+                    &middot;
+                    <a href="#">Terms &amp; Conditions</a>
+                </div> -->
             </div>
         </div>
+    </footer>
 
-        <footer class="py-4 bg-light mt-auto">
-            <div class="container-fluid px-4">
-                <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Copyright &copy; PCN & WISEITECH & Sejong University 2023</div>
-                    <!-- <div>
-                        <a href="#">Privacy Policy</a>
-                        &middot;
-                        <a href="#">Terms &amp; Conditions</a>
-                    </div> -->
-                </div>
-            </div>
-        </footer>
-
-        <script src="static/js/structure.js"></script>
-        <script src="static/js/rank.js"></script>
-        <script src="static/js/sim_score.js"></script>
-        <script src="static/js/article.js"></script>
-        <script src="static/js/clickbait.js"></script>
-        <script src="static/js/result.js"></script>
-    </body>
+    <script src="static/js/structure.js"></script>
+    <script src="static/js/rank.js"></script>
+    <script src="static/js/sim_score.js"></script>
+    <script src="static/js/article.js"></script>
+    <script src="static/js/clickbait.js"></script>
+    <script src="static/js/result.js"></script>
+</body>
 </html>

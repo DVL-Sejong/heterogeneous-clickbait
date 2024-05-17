@@ -1,7 +1,19 @@
 let rankChartRendered = 0;
 let rchart;
 
-function draw_rank(title) {
+function draw_rank(arr) {
+  var keys = []
+  var values = []
+  var len = 0
+  if (arr.length > 5) {
+    len = 5
+  } else {
+    len = arr.length
+  }
+  for (var i = 0; i < len; i++) {
+    keys.push(arr[i][0])
+    values.push(arr[i][1].toFixed(2))
+  }
     if (rankChartRendered == 1) {
         rchart.destroy();
     }
@@ -9,10 +21,10 @@ function draw_rank(title) {
     var options = {
         series: [{
         name: 'topic rank',
-        data: [3, 2, 4, 5, 1]
+        data: values
       }],
         chart: {
-        height: 380,
+        height: 360,
         type: 'bar',
         events: {
           click: function(chart, w, e) {
@@ -33,22 +45,13 @@ function draw_rank(title) {
         show: false
       },
       xaxis: {
-        labels: {
-            show: false,
-        },
-        categories: [
-          ['Isreal'],
-          ['Hamas'],
-          ['The Gaza Strip'],
-          ['Hostage Situation'],
-          ['Conflict in the Middle East'], 
-        ],
+        categories: keys.map(function(key) {
+          return [key];
+        })
       }
     };
 
-      rchart = new ApexCharts(document.querySelector("#rank_chart"), options);
-      rankChartRendered = 1
-      rchart.render();
+    rchart = new ApexCharts(document.querySelector("#rank_chart"), options);
+    rankChartRendered = 1
+    rchart.render();
 }
-
-draw_rank(1);

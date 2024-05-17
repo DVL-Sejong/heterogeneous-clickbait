@@ -1,9 +1,3 @@
-/* html, body {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(228, 228, 228);
-} */
-
 html, body {
     margin: 0;
     padding: 0;
@@ -27,14 +21,27 @@ html, body {
   }
 
 .dashboard .box {
-    /* position: absolute; */
+    position: absolute;
     z-index: 1;
     border: 1px solid rgb(222, 220, 220);
     background-color: white;
     border-radius: 0.2em;
     box-shadow: 0 0 1px;
-    padding: 5px;
     margin: 5px;
+}
+
+.dashboard #swap_data {
+    position: absolute;
+    z-index: 3;
+    top: 65px;
+    left: 930px;
+    width: 65px;
+    height: 25px;
+    border-radius: 0.2em;
+    box-shadow: 0 0 1px;
+    background-color: rgb(222, 220, 220);
+    text-align: center;
+    padding: 3;
 }
 
 /*---------------------------------------------------------------*/
@@ -57,19 +64,73 @@ html, body {
   
 .dashboard .three b:after {
     content: "";
-    /* position: absolute; */
-    left: 5%;
+    position: absolute;
+    left: 2.5%;
     bottom: 4px;
     height: 3px;
-    width: 90%;
+    width: 95%;
     background-color: rgb(222, 220, 220);
+}
+
+.dashboard .four {
+    height: 40px;
+    width: 100%;
+}
+
+.dashboard .four b {
+    display: block;
+    font-size: 15px;
+    font-weight: bold 500;
+    letter-spacing: 0;
+    line-height: 1.5em;
+    padding-bottom: 10px;
+    position: relative;
+    padding-left: 10px;
+    text-align: left; /* 왼쪽 정렬 추가 */
+}
+  
+.dashboard .four b:after {
+    content: "";
+    position: absolute;
+    left: 2.5%;
+    bottom: 4px;
+    height: 1px;
+    width: 95%;
+    background-color: black;
+}
+
+.dashboard .five {
+    height: 40px;
+    width: 100%;
+}
+
+.dashboard .five b {
+    display: block;
+    font-size: 15px;
+    font-weight: bold 500;
+    letter-spacing: 0;
+    line-height: 1.5em;
+    padding-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+    text-align: center; /* 왼쪽 정렬 추가 */
+}
+  
+.dashboard .five b:after {
+    content: "";
+    position: absolute;
+    left: 2.5%;
+    bottom: 4px;
+    height: 1px;
+    width: 95%;
+    background-color: black;
 }
 
 .dashboard ul {
     list-style: none;
     padding-left: 0;
     padding-top: 3px;
-    margin-top: 3px;
+    /*margin-top: 3px;*/
 }
 
 .dashboard li {
@@ -81,7 +142,7 @@ html, body {
 
 .dashboard li:before {
     content: '\2022'; /* 불릿 문자 */
-    /* position: absolute; */
+    position: absolute;
     left: 0; /* 불릿의 위치 조정 */
     top: 0; /* 불릿의 상단 위치 조정 */
     color: black; /* 불릿 색상 설정 */
@@ -90,9 +151,10 @@ html, body {
 }
 
 .dashboard .radio-container {
-    width: 480px;
+    width: 315px;
     display: flex;
     justify-content: space-between;
+    font-size: 10px;
 }
 
 .dashboard .radio-container input[type="radio"] {
@@ -108,8 +170,8 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 5px;
-    height: 5px;
+    width: 3px;
+    height: 3px;
 }
 
 .dashboard .radio-container input[type="radio"]:checked + label {
@@ -122,157 +184,290 @@ html, body {
     text-align: center;
 }
 /*---------------------------------------------------------------*/
-/* #title {
+.dashboard #title {
     width: 300px;
     height: 400px;
 }
 
-#hierarchy_structure {
-    left: 325px;
+.dashboard #hierarchy_structure {
+    left: 310px;
     width: 700px;
     height: 400px;
 }
 
-#topic_rank {
-    left: 1040px;
+.dashboard #topic_rank {
+    left: 1020px;
     width: 300px;
     height: 400px;
 }
 
-#similarity_score {
-    top: 425px;
+.dashboard #similarity_score {
+    top: 465px;
     width: 250px;
-    height: 600px;
+    height: 610px;
 }
 
-#human {
-    left: 275px;
-    top: 425px;
+.dashboard #human {
+    left: 260px;
+    top: 465px;
     width: 350px;
-    height: 600px;
+    height: 610px;
 }
 
-#result {
-    left: 640px;
-    top: 425px;
+.dashboard #result {
+    left: 620px;
+    top: 465px;
     width: 700px;
-    height: 600px;
-} */
-#title {
-    grid-column: 1 / 2;
-}
-
-#hierarchy_structure {
-    grid-column: 2 / 4;
-}
-
-#topic_rank {
-    grid-column: 4 / 5;
-}
-
-#similarity_score {
-    grid-column: 1 / 2;
-}
-
-#human {
-    grid-column: 2 / 3;
-}
-
-#result {
-    grid-column: 3 / 5;
-    overflow-y: auto;
+    height: 610px;
 }
 
 /*--------------------------------------*/
-#news_title {
-    /* position: absolute; */
-    margin: 0 15px;
-    padding: 5px 5px 10px 5px;
-    height: 80px;
-    border-bottom: 2px dashed #ddd;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1em;
-    font-weight: lighter;
-    text-align: left;
-    overflow-y: auto;
+
+.dashboard #main_text {
+    position: relative;
+    top: 45px;
 }
 
-#main_text {
-    /* position: absolute; */
-    margin: 0 15px;
-    padding: 5px 5px 10px 5px;
-    /* top: 105px; */
-    /* width: 265px; */
-    height: 190px;
-    padding-bottom: 10px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1em;
-    font-weight: lighter;
-    overflow-y: auto;
+.dashboard #Summary {
+    position: relative;
+    top: 165px;
 }
 
-#Summary {
-    /* position: absolute; */
-    margin: 0 15px;
-    padding: 5px 5px 10px 5px;
-    /* top: 305px; */
-    /* width: 265px; */
-    height: 85px;
-    padding-top: 10px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1em;
-    font-weight: lighter;
+.dashboard #titleText {
+    position: relative;
+    margin-left: 8px;
+    padding-left: 5px;
+    width: 275px;
+    height: 50px;
     overflow-y: auto;
+    border: 1px solid #800020;
+    border-left: 5px solid #800020;
+    font-size: 12px;
+}
+
+.dashboard #mainText {
+    position: relative;
+    margin-left: 8px;
+    padding-left: 5px;
+    width: 275px;
+    height: 125px;
+    overflow-y: auto;
+    border: 1px solid #d3d3d3;
+    border-left: 5px solid #d3d3d3;
+    font-size: 12px;
+}
+
+.dashboard #summaryText {
+    position: relative;
+    margin-left: 8px;
+    padding-left: 5px;
+    width: 275px;
+    height: 72px;
+    overflow-y: auto;
+    border: 1px solid #99c68e;
+    border-left: 5px solid #99c68e;
+    font-size: 12px;
+}
+
+/*---------------------------------------------------------------*/
+.dashboard #summary_title {
+    position: relative;
+    top: 150px;
+}
+
+.dashboard #summary_thumbnail {
+    position: relative;
+    top: 300px;
+}
+
+.dashboard #thumbnail_t {
+    position: absolute;
+    margin-left: 5px;
+    top: 80px;
+    width: 240px;
+    height: 170px;
+}
+
+.dashboard #summary_t {
+    position: absolute;
+    margin-left: 5px;
+    width: 240px;
+    height: 170px;
+}
+
+.dashboard #summary_th {
+    position: absolute;
+    margin-left: 5px;
+    width: 240px;
+    height: 170px;
 }
 
 /*----------------------------------------------------*/
-#thumbnail {
-    /* position: absolute; */
+.dashboard #thumbnail {
+    position: absolute;
     top: 45px;
-    left: 10px;
-    width: 490px;
+    width: 350px;
     height: 360px;
-    margin-left: 5px;
 }
 
-#topic_list {
-    /* position: absolute; */
-    top: 410px;
-    left: 10px;
-    width: 490px;
+.dashboard #img_box {
+    position: absolute;
+    margin-left: 2.5%;
+}
+
+.dashboard #topic_list {
+    position: absolute;
+    top: 320px;
+    width: 350px;
     height: 50px;
-    margin-left: 5px;
 }
 
-#bait_title {
-    /* position: absolute; */
-    top: 465px;
-    left: 10px;
-    width: 490px;
-    height: 70px;
-    margin-left: 5px;
-    margin-top: 5px;
-}
-
-#set_score {
-    /* position: absolute; */
-    top: 540px;
-    left: 10px;
-    width: 490px;
+.dashboard #topic_box {
+    position: absolute;
+    padding-left: 5px;
+    top: 25px;
+    width: 326px;
     height: 60px;
-    margin-left: 5px;
+    margin: 2.5%;
+    border: dashed rgb(222, 220, 220);
+}
+
+.dashboard #bait_title {
+    position: absolute;
+    top: 420px;
+    width: 350px;
+    height: 50px;
+}
+
+.dashboard #title_box {
+    position: absolute;
+    padding-left: 5px;
+    padding-top: 5px;
+    top: 24px;
+    width: 326px;
+    height: 65px;
+    margin: 2.5%;
+    overflow-y: auto;
+    border: dashed rgb(222, 220, 220);
+}
+
+.dashboard #set_score {
+    position: absolute;
+    top: 520px;
+    width: 350px;
+    height: 70px;
+}
+
+.dashboard .radio-container {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    width: 331px;
+    height: 50px;
+    border: dashed rgb(222, 220, 220);
 }
 /*---------------------------------------------------*/
-#tree_vis {
+.dashboard #tree_vis {
     position: relative;
     width: 700px;
     height: 360px;
 }
 /*----------------------------------------------------*/
-#trajectory {
-    /* position: absolute; */
+.dashboard #trajectory {
+    position: absolute;
     top: 45px;
     left: 15px;
     width: 680px;
     height: 360px;
+}
+
+.dashboard #total {
+    position: absolute;
+    top: 420px;
+}
+
+.dashboard #scoring {
+    position: absolute;
+    left: 10px;
+    top: 35px;
+    width: 680px;
+    height: 140px;
+}
+
+.dashboard #seperate_score {
+    position: absolute;
+    margin-left: 3px;
+    width: 290px;
+    height: 148px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold 1000;
+    border: dashed rgb(222, 220, 220);
+}
+
+.dashboard #seperate_score b {
+    text-align: center;
+    margin: 0;
+}
+
+.dashboard #seperate_score li {
+    margin-left: 3px;
+}
+
+.dashboard #total_score {
+    position: absolute;
+    left: 300px;
+    width: 375px;
+    height: 148px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold 1000;
+    border: dashed rgb(222, 220, 220);
+}
+
+.dashboard #total_div {
+    position: relative;
+    padding-top: 20px;
+    margin-left: 2.5%;
+    width: 358px;
+    height: 20px;
+}
+
+.dashboard #total_score b {
+    text-align: center;
+    margin: 0;
+}
+
+.dashboard .s1 {
+    background-color: #d1b89b;
+}
+
+.dashboard .s2 {
+    background-color: #f17827;
+}
+
+.dashboard .s3 {
+    background-color: #b0bfd0;
+}
+
+.dashboard .s4 {
+    background-color: #aea0dd;/*#9d8fcc;*/
+}
+
+.dashboard .s5 {
+    background-color: #d7d5d2;
+}
+
+.dashboard .s6 {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.dashboard .s7 {
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 15px;
+}
+
+.dashboard span {
+    font-size: 12px;
 }
