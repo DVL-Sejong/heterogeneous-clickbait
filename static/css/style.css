@@ -1,0 +1,473 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#layoutSidenav_content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 420px auto;
+    /* height: 100%; */
+  }
+
+.dashboard .box {
+    position: absolute;
+    z-index: 1;
+    border: 1px solid rgb(222, 220, 220);
+    background-color: white;
+    border-radius: 0.2em;
+    box-shadow: 0 0 1px;
+    margin: 5px;
+}
+
+.dashboard #swap_data {
+    position: absolute;
+    z-index: 3;
+    top: 65px;
+    left: 930px;
+    width: 65px;
+    height: 25px;
+    border-radius: 0.2em;
+    box-shadow: 0 0 1px;
+    background-color: rgb(222, 220, 220);
+    text-align: center;
+    padding: 3;
+}
+
+/*---------------------------------------------------------------*/
+.dashboard .three {
+    height: 40px;
+    width: 100%;
+}
+
+.dashboard .three b {
+    display: block;
+    font-size: 20px;
+    font-weight: bold 500;
+    letter-spacing: 0;
+    line-height: 1.5em;
+    padding-bottom: 10px;
+    position: relative;
+    padding-left: 5px;
+    text-align: center; /* 왼쪽 정렬 추가 */
+}
+  
+.dashboard .three b:after {
+    content: "";
+    position: absolute;
+    left: 2.5%;
+    bottom: 4px;
+    height: 3px;
+    width: 95%;
+    background-color: rgb(222, 220, 220);
+}
+
+.dashboard .four {
+    height: 40px;
+    width: 100%;
+}
+
+.dashboard .four b {
+    display: block;
+    font-size: 15px;
+    font-weight: bold 500;
+    letter-spacing: 0;
+    line-height: 1.5em;
+    padding-bottom: 10px;
+    position: relative;
+    padding-left: 10px;
+    text-align: left; /* 왼쪽 정렬 추가 */
+}
+  
+.dashboard .four b:after {
+    content: "";
+    position: absolute;
+    left: 2.5%;
+    bottom: 4px;
+    height: 1px;
+    width: 95%;
+    background-color: black;
+}
+
+.dashboard .five {
+    height: 40px;
+    width: 100%;
+}
+
+.dashboard .five b {
+    display: block;
+    font-size: 15px;
+    font-weight: bold 500;
+    letter-spacing: 0;
+    line-height: 1.5em;
+    padding-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+    text-align: center; /* 왼쪽 정렬 추가 */
+}
+  
+.dashboard .five b:after {
+    content: "";
+    position: absolute;
+    left: 2.5%;
+    bottom: 4px;
+    height: 1px;
+    width: 95%;
+    background-color: black;
+}
+
+.dashboard ul {
+    list-style: none;
+    padding-left: 0;
+    padding-top: 3px;
+    /*margin-top: 3px;*/
+}
+
+.dashboard li {
+    float: left;
+    margin-right: 10px; /* 각 항목 사이의 간격 조정 */
+    position: relative; /* 불릿 위치 조정을 위한 상대 위치 설정 */
+    padding-left: 12px; /* 텍스트와 불릿 사이의 간격 조정 */
+}
+
+.dashboard li:before {
+    content: '\2022'; /* 불릿 문자 */
+    position: absolute;
+    left: 0; /* 불릿의 위치 조정 */
+    top: 0; /* 불릿의 상단 위치 조정 */
+    color: black; /* 불릿 색상 설정 */
+    font-size: 20px; /* 불릿 크기 설정 */
+    line-height: 1; /* 라인 높이 조정 */
+}
+
+.dashboard .radio-container {
+    width: 315px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+}
+
+.dashboard .radio-container input[type="radio"] {
+    display: none; /* 기본 라디오 버튼 숨기기 */
+}
+
+.dashboard .radio-container label {
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3px;
+    height: 3px;
+}
+
+.dashboard .radio-container input[type="radio"]:checked + label {
+    background-color: #555; /* 선택된 라디오 버튼 색상 변경 */
+}
+
+.dashboard .radio-container label span {
+    display: block;
+    margin-top: 40px; /* 텍스트를 버튼 아래에 위치 */
+    text-align: center;
+}
+/*---------------------------------------------------------------*/
+.dashboard #title {
+    width: 300px;
+    height: 400px;
+}
+
+.dashboard #hierarchy_structure {
+    left: 310px;
+    width: 700px;
+    height: 400px;
+}
+
+.dashboard #topic_rank {
+    left: 1020px;
+    width: 300px;
+    height: 400px;
+}
+
+.dashboard #similarity_score {
+    top: 465px;
+    width: 250px;
+    height: 610px;
+}
+
+.dashboard #human {
+    left: 260px;
+    top: 465px;
+    width: 350px;
+    height: 610px;
+}
+
+.dashboard #result {
+    left: 620px;
+    top: 465px;
+    width: 700px;
+    height: 610px;
+}
+
+/*--------------------------------------*/
+
+.dashboard #main_text {
+    position: relative;
+    top: 45px;
+}
+
+.dashboard #Summary {
+    position: relative;
+    top: 165px;
+}
+
+.dashboard #titleText {
+    position: relative;
+    margin-left: 8px;
+    padding-left: 5px;
+    width: 275px;
+    height: 50px;
+    overflow-y: auto;
+    border: 1px solid #800020;
+    border-left: 5px solid #800020;
+    font-size: 12px;
+}
+
+.dashboard #mainText {
+    position: relative;
+    margin-left: 8px;
+    padding-left: 5px;
+    width: 275px;
+    height: 125px;
+    overflow-y: auto;
+    border: 1px solid #d3d3d3;
+    border-left: 5px solid #d3d3d3;
+    font-size: 12px;
+}
+
+.dashboard #summaryText {
+    position: relative;
+    margin-left: 8px;
+    padding-left: 5px;
+    width: 275px;
+    height: 72px;
+    overflow-y: auto;
+    border: 1px solid #99c68e;
+    border-left: 5px solid #99c68e;
+    font-size: 12px;
+}
+
+/*---------------------------------------------------------------*/
+.dashboard #summary_title {
+    position: relative;
+    top: 150px;
+}
+
+.dashboard #summary_thumbnail {
+    position: relative;
+    top: 300px;
+}
+
+.dashboard #thumbnail_t {
+    position: absolute;
+    margin-left: 5px;
+    top: 80px;
+    width: 240px;
+    height: 170px;
+}
+
+.dashboard #summary_t {
+    position: absolute;
+    margin-left: 5px;
+    width: 240px;
+    height: 170px;
+}
+
+.dashboard #summary_th {
+    position: absolute;
+    margin-left: 5px;
+    width: 240px;
+    height: 170px;
+}
+
+/*----------------------------------------------------*/
+.dashboard #thumbnail {
+    position: absolute;
+    top: 45px;
+    width: 350px;
+    height: 360px;
+}
+
+.dashboard #img_box {
+    position: absolute;
+    margin-left: 2.5%;
+}
+
+.dashboard #topic_list {
+    position: absolute;
+    top: 320px;
+    width: 350px;
+    height: 50px;
+}
+
+.dashboard #topic_box {
+    position: absolute;
+    padding-left: 5px;
+    top: 25px;
+    width: 326px;
+    height: 60px;
+    margin: 2.5%;
+    border: dashed rgb(222, 220, 220);
+}
+
+.dashboard #bait_title {
+    position: absolute;
+    top: 420px;
+    width: 350px;
+    height: 50px;
+}
+
+.dashboard #title_box {
+    position: absolute;
+    padding-left: 5px;
+    padding-top: 5px;
+    top: 24px;
+    width: 326px;
+    height: 65px;
+    margin: 2.5%;
+    overflow-y: auto;
+    border: dashed rgb(222, 220, 220);
+}
+
+.dashboard #set_score {
+    position: absolute;
+    top: 520px;
+    width: 350px;
+    height: 70px;
+}
+
+.dashboard .radio-container {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    width: 331px;
+    height: 50px;
+    border: dashed rgb(222, 220, 220);
+}
+/*---------------------------------------------------*/
+.dashboard #tree_vis {
+    position: relative;
+    width: 700px;
+    height: 360px;
+}
+/*----------------------------------------------------*/
+.dashboard #trajectory {
+    position: absolute;
+    top: 45px;
+    left: 15px;
+    width: 680px;
+    height: 360px;
+}
+
+.dashboard #total {
+    position: absolute;
+    top: 420px;
+}
+
+.dashboard #scoring {
+    position: absolute;
+    left: 10px;
+    top: 35px;
+    width: 680px;
+    height: 140px;
+}
+
+.dashboard #seperate_score {
+    position: absolute;
+    margin-left: 3px;
+    width: 290px;
+    height: 148px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold 1000;
+    border: dashed rgb(222, 220, 220);
+}
+
+.dashboard #seperate_score b {
+    text-align: center;
+    margin: 0;
+}
+
+.dashboard #seperate_score li {
+    margin-left: 3px;
+}
+
+.dashboard #total_score {
+    position: absolute;
+    left: 300px;
+    width: 375px;
+    height: 148px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold 1000;
+    border: dashed rgb(222, 220, 220);
+}
+
+.dashboard #total_div {
+    position: relative;
+    padding-top: 20px;
+    margin-left: 2.5%;
+    width: 358px;
+    height: 20px;
+}
+
+.dashboard #total_score b {
+    text-align: center;
+    margin: 0;
+}
+
+.dashboard .s1 {
+    background-color: #d1b89b;
+}
+
+.dashboard .s2 {
+    background-color: #f17827;
+}
+
+.dashboard .s3 {
+    background-color: #b0bfd0;
+}
+
+.dashboard .s4 {
+    background-color: #aea0dd;/*#9d8fcc;*/
+}
+
+.dashboard .s5 {
+    background-color: #d7d5d2;
+}
+
+.dashboard .s6 {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.dashboard .s7 {
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 15px;
+}
+
+.dashboard span {
+    font-size: 12px;
+}
