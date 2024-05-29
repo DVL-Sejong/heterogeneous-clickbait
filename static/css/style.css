@@ -202,21 +202,21 @@ html, body {
 }
 
 .dashboard #similarity_score {
-    top: 465px;
+    top: 410px;
     width: 250px;
     height: 610px;
 }
 
 .dashboard #human {
     left: 260px;
-    top: 465px;
+    top: 410px;
     width: 350px;
     height: 610px;
 }
 
 .dashboard #result {
     left: 620px;
-    top: 465px;
+    top: 410px;
     width: 700px;
     height: 610px;
 }
