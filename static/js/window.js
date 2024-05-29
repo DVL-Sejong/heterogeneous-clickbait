@@ -6,12 +6,7 @@ function scaleDashboard() {
     const scaleY = layoutSidenavContent.offsetHeight / 1045;
     const scale = Math.min(scaleX, scaleY);
     
-    if (layoutSidenavContent.offsetWidth < 1680) {
-        dashboard.style.transform = `scale(${scale})`;
-    }
-    else {
-        dashboard.style.transform = `scale(${scaleX*0.99}, ${scaleY})`;
-    }
+    dashboard.style.transform = `scale(${scaleX*0.99}, ${scaleY})`;
     
     dashboard.style.transformOrigin = '0 0px';
 }
