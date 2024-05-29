@@ -33,7 +33,7 @@ html, body {
 .dashboard #swap_data {
     position: absolute;
     z-index: 3;
-    top: 65px;
+    top: 10px;
     left: 930px;
     width: 65px;
     height: 25px;
